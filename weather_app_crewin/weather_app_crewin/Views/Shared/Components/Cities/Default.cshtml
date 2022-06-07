@@ -1,0 +1,39 @@
+﻿@model List<weather_info>
+
+@*<div class="dropdown show">
+    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    şehirler
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    @foreach (var item in Model)
+    {
+
+    <a class="dropdown-item" href="/Weather/Details/@item.id">@item.city_name</a>
+    }
+    </div>
+    </div>*@
+
+<form method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">şehirler</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" name="city_name">
+            @foreach (var item in Model)
+            {
+
+                <option name="city_name" >@item.city_name</option>
+
+            }
+        </select>
+    </div>
+
+
+   @* <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+        <input placeholder="Select date" type="text" id="example" class="form-control">
+        <label for="example">Try me...</label>
+        <i class="fas fa-calendar input-prefix"></i>
+    </div>*@
+    <button class="btn btn-primary" type="submit">sıcaklık getir</button>
+</form>
